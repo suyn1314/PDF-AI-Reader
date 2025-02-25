@@ -9,8 +9,8 @@ class RetrieverManager:
     @st.cache_resource(hash_funcs={list: lambda _: None})
     def create_retriever(_docs):
         """
-        將文件列表轉換成 JSON 並建立 FAISS 檢索器。
-        _docs: 文件列表，每個文件應具有 page_content 與 metadata 屬性。
+        create docs JSON then do embedding in FAISS.
+        list of docs: every list have page_content and metadata for doc.
         """
         docs_json = json.dumps(
             [{"page_content": doc.page_content, "metadata": doc.metadata} for doc in _docs]

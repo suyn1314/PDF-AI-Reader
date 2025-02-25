@@ -25,13 +25,9 @@ def main():
     st.subheader("📝 Ask Questions about the Document")
     if uploaded_file:
         with st.spinner("🔄 Processing PDF..."):
-            # 載入並切分 PDF
             documents = PDFProcessor.process_pdf(uploaded_file)
-        # 建立檢索器（利用 FAISS 向量存儲）
         retriever = RetrieverManager.create_retriever(documents)
-        # 取得 LLM 實例（DeepSeek R1 模型）
         llm = LLMManager.get_llm()
-        # 建立問答 Chain
         qa_chain = QABuilder.build_qa_chain(retriever, llm)
         user_input = st.text_input("Enter your question:")
         if user_input:

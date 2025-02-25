@@ -100,19 +100,10 @@ def load_pdf_text(file):
 
 def get_pdf_summary(pdf_text, summarizer):
     """
-    Use prompt engineering to obtain a summary of the PDF text.
-    The summary must include:
+    The prompt pdf summary must include:
       1. A brief description of the overall content.
       2. Detailed descriptions of any diagrams/charts present.
       3. Abstract summaries of any tables included.
-
-    English Prompt:
-    "You are a professional document summarizer. Please summarize the following PDF content.
-     Your summary should include detailed descriptions of any diagrams or charts as well as abstract summaries of any tables present.
-     Ensure your summary is clear, concise, and covers the key points of the document.
-     PDF Content:
-     {content}
-     Summary:"
     """
     prompt = (
         "You are a professional document summarizer. Please summarize the following PDF content. "

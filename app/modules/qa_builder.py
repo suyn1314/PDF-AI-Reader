@@ -4,6 +4,7 @@ from langchain.chains.llm import LLMChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains import RetrievalQA
 
+
 class QABuilder:
     @staticmethod
     def build_prompt():

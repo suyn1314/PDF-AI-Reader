@@ -1,8 +1,5 @@
-streamlit
-pymupdf
-langchain
+Streamlit
+PyMuPDF
+Pillow
+Transformers
 langchain_community
-faiss-cpu
-sentence-transformers
-pillow
-transformers
